@@ -1,0 +1,21 @@
+:root {
+  --white: #f7f6f4;
+  --white-bg: #fafafa;
+  --brown-bg: #c23933;
+  --red-wine: #b48000;
+  --red-wine-main: #fcc743;
+  --proc-off: #a29c9b;
+  --proc-on: #fcc743;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: inherit;
+}
+
+#canvas{
+/* width: 500px; */
+height: 500px;
+border: 2px solid black;
+}
