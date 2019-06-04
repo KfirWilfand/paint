@@ -14,8 +14,46 @@ body {
   width: inherit;
 }
 
-#canvas{
-/* width: 500px; */
-height: 500px;
-border: 2px solid black;
+#canvas {
+  /* width: 500px; */
+  height: 500px;
+  border: 2px solid black;
+}
+
+.palette-item {
+  /* border: 1px double gray; */
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #c23933;
+}
+
+.color-picked {
+  background: #a29c9b;
+  min-height: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  max-width: 40px;
+}
+
+.picked-item {
+  border: 2px outset gray;
+  min-height: 23px;
+  max-height: 23px;
+  min-width: 23px;
+  max-width: 23px;
+  position: absolute;
+  background: #a29c9b;
+}
+
+.picked-item#main-picked-item {
+  left: 2px;
+  top: 4px;
+}
+
+.picked-item#slave-picked-item {
+  right: 4px;
+  top: 13px;
 }
