@@ -17,22 +17,21 @@ var colors = [
   "#fcDF43"
 ];
 
-var mainPickedColor = "#a29c9b";
-var slavePickedColor = "#a29c9b";
-
 var fillColorPalette = () => {
   colors.forEach(color => {
-    var colorItem = document.createElement("div");
-    colorItem.setAttribute("class", "col-1 palette-item");
-    colorItem.style.backgroundColor = color;
-    colorItem.addEventListener("click", onPickedColor);
-    document.getElementById("color-palette").appendChild(colorItem);
+    var colorItem = $("<div></div>")
+      .addClass("col-1 palette-item")
+      .css("background-color", color)
+      .click(onPickedColor);
+
+    $("#color-palette").append(colorItem);
   });
 };
 
 var onPickedColor = e => {
   slavePickedColor = mainPickedColor;
-  mainPickedColor = e.target.style.backgroundColor;
+  mainPickedColor = $(e.target).css("background-color");
+  context.color = mainPickedColor;
   document.getElementById(
     "main-picked-item"
   ).style.backgroundColor = mainPickedColor;
@@ -41,8 +40,7 @@ var onPickedColor = e => {
   ).style.backgroundColor = slavePickedColor;
 };
 
-//init palette
-fillColorPalette();
-document
-  .getElementById("slave-picked-item")
-  .addEventListener("click", onPickedColor);
+$(document).ready(function() {
+  fillColorPalette();
+  $("#slave-picked-item").click(onPickedColor);
+});

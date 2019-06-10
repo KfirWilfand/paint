@@ -12,12 +12,15 @@ body {
   margin: 0px;
   padding: 0px;
   width: inherit;
+  background: #c0c0c0;
 }
 
 #canvas {
-  /* width: 500px; */
-  height: 500px;
-  border: 2px solid black;
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 500px;
+  min-height: 500px;
+  background: white;
 }
 
 .palette-item {
@@ -27,11 +30,10 @@ body {
   max-width: 20px;
   margin: 0px;
   padding: 0px;
-  background-color: #c23933;
 }
 
 .color-picked {
-  background: #a29c9b;
+  background: gray;
   min-height: 40px;
   max-height: 40px;
   min-width: 40px;
@@ -45,7 +47,7 @@ body {
   min-width: 23px;
   max-width: 23px;
   position: absolute;
-  background: #a29c9b;
+  background: gray;
 }
 
 .picked-item#main-picked-item {
@@ -56,4 +58,88 @@ body {
 .picked-item#slave-picked-item {
   right: 4px;
   top: 13px;
+}
+
+.scale-item {
+  min-height: 6px;
+  max-height: 6px;
+  min-width: 6px;
+  max-width: 6px;
+  position: absolute;
+  background-color: #59a7f4;
+}
+#right-top {
+  top: 0px;
+  right: -5px;
+}
+#right-center {
+  top: 50%;
+  right: -5px;
+}
+#bottom-right {
+  bottom: -5px;
+  right: -5px;
+}
+#bottom-left {
+  bottom: -5px;
+  left: -5px;
+}
+#bottom-center {
+  bottom: -5px;
+  left: 50%;
+}
+.side-toolbar{
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  max-width: 35px;
+}
+.tool-item{
+  border: 2px outset gray;
+  min-height: 30px;
+  max-height: 30px;
+  min-width: 23px;
+  max-width: 23px;
+  background: gray;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.choosed-tool{
+  border: 2px outset white;
+  background: #003366;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#pen{
+  background-image: url("../img/pen.png");
+}
+
+#eraser{
+  background-image: url("../img/eraser.png");
+}
+
+#plus{
+  background-image: url("../img/plus.png");
+  background-size: 60%;
+}
+
+#minus{
+  background-image: url("../img/minus.png");
+  background-size: 60%;
+}
+
+#brash-1{
+  background-image: url("../img/brash-1.png");
+  background-size: 60%;
+}
+
+#brash-2{
+  background-image: url("../img/brash-2.png");
+  background-size: 60%;
+}
+
+.rotated-180 {
+  transform: rotate(180deg); 
 }

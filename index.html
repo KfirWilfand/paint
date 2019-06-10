@@ -5,55 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jquery-3.4.1.min.js"></script>
     <link href="./lib/bootstrap.min.css" rel="stylesheet">
     <link href="./css/styles.css" rel="stylesheet">
+    <script type="text/javascript">
 
+    </script>
+    <script type="text/javascript" src="./js/global-var.js"></script>
+    <script type="text/javascript" src="./js/drawer.js"></script>
+    <script type="text/javascript" src="./js/color-palette.js"></script>
+    <script type="text/javascript" src="./js/canvas.js"></script>
+    <script type="text/javascript" src="./lib/jscolor.js"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Paint</a>
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">File <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
     </nav>
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-2 side-toolbar"></div>
-            <div class="col-10" id="canvas"></div>
+            <div class="col-1 side-toolbar">
+                <div class="col-1 tool-item t-drawer choosed-tool" id="pen"></div>
+                <div class="col-1 tool-item t-drawer" id="eraser"></div>
+
+                <div class="col-1 tool-item t-brash choosed-tool" id="brash-1"></div>
+                <div class="col-1 tool-item t-brash" id="brash-2"></div>
+
+                <div class="col-1 tool-item t-mod" id="plus"></div>
+                <div class="col-1 tool-item t-mod" id="minus"></div>
+            </div>
+            <div class="col-10" id="canvas">
+                <div class="scale-item" id="right-top"></div>
+                <div class="scale-item" id="right-center"></div>
+                <div class="scale-item" id="bottom-right"></div>
+                <div class="scale-item" id="bottom-left"></div>
+                <div class="scale-item" id="bottom-center"></div>
+            </div>
         </div>
         <div class="row">
             <div class="col-1 color-picked">
-
                 <div class="col-1 palette-item picked-item" id="slave-picked-item"></div>
                 <div class="col-1 palette-item picked-item" id="main-picked-item"></div>
             </div>
@@ -65,8 +56,7 @@
 
         </div>
     </div>
-    <script src="./js/color-palette.js"></script>
-    <script src="./js/drawer.js"></script>
+
 </body>
 
 </html>
