@@ -39,7 +39,6 @@ var changeScale = (e, isIncreasing) => {
   }
 };
 
-
 var firstMouseDownOffsetX;
 var firstMouseDownOffsetY;
 
@@ -60,4 +59,23 @@ $(document).ready(function() {
         ? changeScale(e, true)
         : changeScale(e, false);
     });
+
+  $("#canvas-height").change(function(e) {
+    let newHeight = parseInt(e.target.value);
+    $("#canvas")
+      .css("minHeight", newHeight)
+      .css("minHeight", newHeight);
+
+    canvasHeight = newHeight;
+  });
+
+  $("#canvas-width").change(function(e) {
+    let newWidth = parseInt(e.target.value);
+
+    $("#canvas")
+      .css("maxWidth", parseInt(e.target.value))
+      .css("minWidth", parseInt(e.target.value));
+
+      canvasWidth = newWidth;
+  });
 });

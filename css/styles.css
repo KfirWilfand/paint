@@ -8,6 +8,17 @@
   --proc-on: #fcc743;
 }
 
+.header {
+  background-color: #fcc743;
+  padding-bottom: 8px;
+  font-size: medium;
+}
+
+.header input {
+  width: 50px;
+  height: 20px;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -88,13 +99,13 @@ body {
   bottom: -5px;
   left: 50%;
 }
-.side-toolbar{
+.side-toolbar {
   margin: 0px;
   border: 0px;
   padding: 0px;
   max-width: 35px;
 }
-.tool-item{
+.tool-item {
   border: 2px outset gray;
   min-height: 30px;
   max-height: 30px;
@@ -105,41 +116,41 @@ body {
   background-repeat: no-repeat;
 }
 
-.choosed-tool{
+.choosed-tool {
   border: 2px outset white;
   background: #003366;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-#pen{
+#pen {
   background-image: url("../img/pen.png");
 }
 
-#eraser{
+#eraser {
   background-image: url("../img/eraser.png");
 }
 
-#plus{
+#plus {
   background-image: url("../img/plus.png");
   background-size: 60%;
 }
 
-#minus{
+#minus {
   background-image: url("../img/minus.png");
   background-size: 60%;
 }
 
-#brush-1{
+#brush-1 {
   background-image: url("../img/brash-1.png");
   background-size: 60%;
 }
 
-#brush-2{
+#brush-2 {
   background-image: url("../img/brash-2.png");
   background-size: 60%;
 }
 
 .rotated-180 {
-  transform: rotate(180deg); 
+  transform: rotate(180deg);
 }
