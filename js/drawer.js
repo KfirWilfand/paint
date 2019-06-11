@@ -38,14 +38,19 @@ var onChangeSizeOfPen = e => {
   switch (e.target.id) {
     case "plus":
       $("#plus").toggleClass("choosed-tool");
+      if(context.height > canvasHeight) return;
+      if(context.width > canvasWidth) return;
       context.height++;
       context.width++;
       break;
     case "minus":
+      if(context.height <= 1) return;
       context.height--;
       context.width--;
       break;
   }
+
+  $("#tool-value").text("+" + context.height);
 };
 
 function cancelDrawer() {
@@ -97,7 +102,7 @@ $(document).ready(function() {
     item.toggleClass("choosed-tool");
     setTimeout(function() {
       item.toggleClass("choosed-tool");
-    }, 100);
+    }, 300);
     onChangeSizeOfPen(e);
   });
 
