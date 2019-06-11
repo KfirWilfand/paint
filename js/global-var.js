@@ -11,6 +11,7 @@ var context = {
   borderRadius: 500,
   getElementWithContext: e => {
     var dElement = document.createElement("div");
+    dElement.id = "d-drawer";
     var dElementStyle = dElement.style;
     dElementStyle.width = context.width + "px";
     dElementStyle.height = context.height + "px";

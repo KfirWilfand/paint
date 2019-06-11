@@ -19,9 +19,13 @@ var draw = e => {
   }
 
   var dElement = context.getElementWithContext();
-
-  dElement.style.left = e.offsetX + "px";
-  dElement.style.top = e.offsetY + "px";
+  if (e.target.id === "d-drawer") {
+    dElement.style.left = parseInt(e.target.style.left) + e.offsetX + "px";
+    dElement.style.top = parseInt(e.target.style.top) + e.offsetY + "px";
+  } else {
+    dElement.style.left = e.offsetX + "px";
+    dElement.style.top = e.offsetY + "px";
+  }
 
   dElement.addEventListener("mouseover", function() {
     if (!isErasing) return;
