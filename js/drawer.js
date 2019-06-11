@@ -48,6 +48,12 @@ var onChangeSizeOfPen = e => {
   }
 };
 
+function cancelDrawer() {
+  isDrawing = false;
+  isScale = false;
+  isErasing = false;
+}
+
 $(document).ready(function() {
   $("#canvas")
     .mousedown(function(e) {
@@ -62,6 +68,10 @@ $(document).ready(function() {
       }
     })
     .mousemove(function(e) {
+      if (e.target.offsetX > canvasWidth || e.target.offsetX > canvasHeight) {
+        cancelDrawer();
+        return;
+      }
       switch ($(".choosed-tool")[0].id) {
         case "pen":
           draw(e);
@@ -71,10 +81,12 @@ $(document).ready(function() {
       }
     })
     .mouseup(function() {
-      isDrawing = false;
-      isScale = false;
-      isErasing = false;
+      cancelDrawer();
     });
+
+  $(document).mouseover(function(e) {
+    if (e.target.id != "d-drawer" && e.target.id != "canvas") cancelDrawer();
+  });
 
   $(".tool-item.t-drawer").click(function(e) {
     $(".tool-item.t-drawer").toggleClass("choosed-tool");
@@ -102,10 +114,10 @@ $(document).ready(function() {
     $(".tool-item.t-brash").toggleClass("choosed-tool");
 
     switch (e.target.id) {
-      case "brash-1":
+      case "brush-1":
         context.borderRadius = 25;
         break;
-      case "brash-2":
+      case "brush-2":
         context.borderRadius = 0;
         break;
     }

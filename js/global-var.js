@@ -3,6 +3,8 @@ var mainPickedColor = defaultColor;
 var slavePickedColor = defaultColor;
 var isScale = false;
 var isMouseOnScaleItem = false;
+var canvasWidth = 500;
+var canvasHeight = 500;
 
 var context = {
   width: 5,
